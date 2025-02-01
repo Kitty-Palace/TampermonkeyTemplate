@@ -29,6 +29,58 @@ This repository contains a template for creating a Tampermonkey script that load
 // @match        *://another-example.com/*
 ```
 
+## Metadata Block
+
+The metadata block in a Tampermonkey script contains information about the script. Here are some common metadata fields you can edit:
+
+- `@name`: The name of the script.
+- `@namespace`: A unique identifier for the script, usually a URL.
+- `@version`: The version of the script.
+- `@description`: A brief description of what the script does.
+- `@author`: The author of the script.
+- `@match`: The URL patterns where the script should run.
+- `@exclude`: The URL patterns where the script should not run.
+- `@grant`: Permissions that the script requires, such as access to certain APIs.
+- `@run-at`: Specifies when the script should run (e.g., `document-start`, `document-end`).
+- `@require`: URLs of external scripts that should be loaded before this script.
+- `@resource`: URLs of external resources (e.g., images, stylesheets) that the script can use.
+- `@icon`: URL of an icon for the script.
+- `@updateURL`: URL where updates for the script can be found.
+- `@downloadURL`: URL where the script can be downloaded.
+
+<details>
+<summary>@run-at Arguments</summary>
+
+The `@run-at` metadata specifies when the script should be executed. Here are the common values:
+
+- `document-start`: The script runs as soon as possible, before the page's HTML is fully loaded.
+- `document-end`: The script runs after the page's HTML is fully loaded and parsed.
+
+</details>
+
+Here is an example of a metadata block with these fields:
+
+```javascript
+// ==UserScript==
+// @name         Example Script
+// @namespace    http://example.com/
+// @version      1.0
+// @description  An example Tampermonkey script
+// @author       Your Name
+// @match        *://example.com/*
+// @exclude      *://example.com/exclude/*
+// @grant        GM_xmlhttpRequest
+// @run-at       document-end
+// @require      https://example.com/external-script.js
+// @resource     exampleImage https://example.com/image.png
+// @icon         https://example.com/icon.png
+// @updateURL    https://example.com/update
+// @downloadURL  https://example.com/download
+// ==/UserScript==
+```
+
+Replace the placeholder values with actual data relevant to your script.
+
 ## Example
 
 Here is an example of what the modified script might look like:

@@ -3,7 +3,7 @@
 This repository contains a template for creating a Tampermonkey script that loads another script from a GitHub repository.
 
 
-TEST LINK <a href="tampermonkey://install-script?url=https://raw.githubusercontent.com/Kitty-Palace/TampermonkeyTemplate/refs/heads/main/Example%20TM.js">Install Script</a>
+TEST LINK <a href="https://raw.githubusercontent.com/Kitty-Palace/TampermonkeyTemplate/refs/heads/main/Example%20TM.user.js">Install Script</a>
 
 
 ## How to Use

@@ -30,7 +30,7 @@ This repository contains a template for creating a Tampermonkey script that load
 ```
 
 7. **Auto Install Script**:
-   - By making the filename end in `.user.js`, you can create a link that auto installs the Tampermonkey script. For example, if your script is hosted on GitHub, you can provide a link like `https://github.com/username/repository/raw/branch/filename.user.js`.
+   - By making the Monkey-script filename end in `.user.js`, you can create a link that auto installs the Tampermonkey script. For example, if your script is hosted on GitHub, you can provide a link like `https://github.com/username/repository/raw/branch/filename.user.js`. <<< make sure this is the Monkey-Script and not the one you want to load with it!!!
 
 ## Metadata Block
 
@@ -102,7 +102,7 @@ Here is an example of what the modified script might look like:
 (function() {
     'use strict';
 
-    const scriptUrl = 'https://raw.githubusercontent.com/username/repository/branch/script.user.js';
+    const scriptUrl = 'https://raw.githubusercontent.com/username/repository/branch/script.js';
     const script = document.createElement('script');
     script.src = scriptUrl;
     script.onload = function() {
@@ -112,4 +112,4 @@ Here is an example of what the modified script might look like:
 })();
 ```
 
-Replace `https://raw.githubusercontent.com/username/repository/branch/script.user.js` with the actual URL of the script you want to load.
+Replace `https://raw.githubusercontent.com/username/repository/branch/script.js` with the actual URL of the script you want to load.

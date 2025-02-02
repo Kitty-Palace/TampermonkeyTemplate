@@ -2,10 +2,6 @@
 
 This repository contains a template for creating a Tampermonkey script that loads another script from a GitHub repository.
 
-
-TEST LINK <a href="https://raw.githubusercontent.com/Kitty-Palace/TampermonkeyTemplate/refs/heads/main/Example%20TM.user.js">Install Script</a>
-
-
 ## How to Use
 
 1. **Create a New Script**:
@@ -19,19 +15,22 @@ TEST LINK <a href="https://raw.githubusercontent.com/Kitty-Palace/TampermonkeyTe
    - Paste the copied script into the new script editor in Tampermonkey.
 
 4. **Modify the Script URL**:
-   - Replace `https://raw.githubusercontent.com/username/repository/branch/script.js` in the script with the raw URL of the script you want to load from GitHub.
+   - Replace `https://raw.githubusercontent.com/username/repository/branch/script.user.js` in the script with the raw URL of the script you want to load from GitHub.
 
 5. **Save and Enable the Script**:
    - Save the script and make sure it is enabled.
 
 6. **Test the Script**:
    - Navigate to a webpage that matches the `@match` pattern in the script to ensure it loads correctly.
-   -The `@match` pattern can be used to specify multiple different sites where the script should run. For example:
+   - The `@match` pattern can be used to specify multiple different sites where the script should run. For example:
 
 ```javascript
 // @match        *://example.com/*
 // @match        *://another-example.com/*
 ```
+
+7. **Auto Install Script**:
+   - By making the filename end in `.user.js`, you can create a link that auto installs the Tampermonkey script. For example, if your script is hosted on GitHub, you can provide a link like `https://github.com/username/repository/raw/branch/filename.user.js`.
 
 ## Metadata Block
 
@@ -103,7 +102,7 @@ Here is an example of what the modified script might look like:
 (function() {
     'use strict';
 
-    const scriptUrl = 'https://raw.githubusercontent.com/username/repository/branch/script.js';
+    const scriptUrl = 'https://raw.githubusercontent.com/username/repository/branch/script.user.js';
     const script = document.createElement('script');
     script.src = scriptUrl;
     script.onload = function() {
@@ -113,4 +112,4 @@ Here is an example of what the modified script might look like:
 })();
 ```
 
-Replace `https://raw.githubusercontent.com/username/repository/branch/script.js` with the actual URL of the script you want to load.
+Replace `https://raw.githubusercontent.com/username/repository/branch/script.user.js` with the actual URL of the script you want to load.
